@@ -1,0 +1,31 @@
+sudo: required
+dist: trusty
+
+language: haxe
+
+services:
+  - redis-server
+
+os:
+  - linux
+  - osx
+  
+haxe:
+  - "3.2.1"
+  - development
+  
+matrix:
+  allow_failures:
+    - haxe: "3.2.1"
+    
+before_install:
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update              ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install redis       ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew services start redis; fi
+  
+install:
+  - haxelib git travix https://github.com/back2dos/travix
+  - haxelib run travix install
+
+script:
+  - haxelib run travix node

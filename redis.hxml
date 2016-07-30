@@ -1,0 +1,6 @@
+-cp tests
+-main RunTests
+-js bin/tests.js
+-lib hxnodejs-redis
+-lib buddy
+-lib utest

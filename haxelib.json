@@ -1,0 +1,14 @@
+{
+  "name": "hxnodejs-redis",
+  "url": "https://github.com/kevinresol/hxnodejs-redis",
+  "description": "Extern for node_redis",
+  "releasenote": "Initial release",
+  "version": "0.9.0",
+  "tags": ["nodejs", "redis"],
+  "contributors": ["kevinresol"],
+  "classPath": "src",
+  "license": "MIT",
+  "dependencies": {
+    "hxnodejs": ""
+  }
+}
